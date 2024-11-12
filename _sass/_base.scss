@@ -4,6 +4,21 @@
 
 // Typography
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 500;
+}
+
 p,
 h1,
 h2,
@@ -14,7 +29,6 @@ h6,
 em,
 div,
 li,
-span,
 strong {
   color: var(--global-text-color);
 }
@@ -215,6 +229,25 @@ ul.task-list input[type="checkbox"] {
   margin-right: 1rem;
 }
 
+.profile-link {
+  color: var(--global-text-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+
+  &:hover {
+    color: var(--global-theme-color);
+    text-decoration: none;
+  }
+}
+
+.profile-image {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+
+}
+
 @media (min-width: 576px) {
   .profile {
     width: 30%;
@@ -285,6 +318,10 @@ ul.task-list input[type="checkbox"] {
 
   .navbar-brand {
     color: var(--global-text-color);
+
+    &:hover {
+      color: var(--global-hover-color);
+    }
   }
 
   .navbar-nav .nav-item .nav-link {
@@ -367,14 +404,29 @@ ul.task-list input[type="checkbox"] {
 
 #light-toggle,
 #search-toggle {
-  padding: 0;
-  border: 0;
+  padding: 0.25rem 0.25rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.5rem;
   background-color: inherit;
-  color: var(--global-text-color);
+  color: #6b7280;
+  margin-left: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border-color 0.15s ease-in-out, color 0.15s ease-in-out;
 
   &:hover {
-    color: var(--global-hover-color);
+    border-color: #9ca3af;
+    color: #4b5563;
   }
+}
+
+#search-cmd {
+  font-size: 0.8rem;
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.25rem;
+  background-color: #f3f4f6;
+  color: #9ca3af;
 }
 
 // Social (bottom)
@@ -676,7 +728,7 @@ footer.sticky-bottom {
   }
 
   h2.bibliography {
-    color: var(--global-divider-color);
+    color: #9ca3af;
     border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
     margin-top: 2rem;
@@ -1163,7 +1215,7 @@ ninja-keys::part(ninja-input-wrapper) {
 .bibsearch-form-input {
   color: var(--global-newsletter-text-color);
   background: var(--global-newsletter-bg-color);
-  border: 1px solid var(--global-newsletter-text-color);
+  border: 2px solid #e5e7eb;
   outline: none;
   margin: 0px 10px 0px 0px;
   width: 100%;
@@ -1173,6 +1225,10 @@ ninja-keys::part(ninja-input-wrapper) {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
   border-radius: 6px;
   padding: 8px 12px;
+
+  &:focus {
+    border-color: var(--global-theme-color) !important;
+  }
 }
 
 .newsletter-form-input:focus {

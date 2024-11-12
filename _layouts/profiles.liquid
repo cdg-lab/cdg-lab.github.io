@@ -4,33 +4,40 @@ layout: page
 <div class="post">
   <article>
     {% if page.profiles %}
-      {% for profile in page.profiles %}
+      {% assign profiles = page.profiles | group_by: 'position' %}
+      {% for profile in profiles %}
+        <h2 class="mt-5">{{ profile.name }}</h2>
         <hr>
-        <div class="profile float-{% if profile.align == 'left' %}left{% else %}right{% endif %}">
-          {% if profile.image %}
-            {% assign profile_image_path = profile.image | prepend: 'assets/img/' %}
-            {% if profile.image_circular %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-            {% else %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-            {% endif %}
-            {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
-            {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile.image %}
-          {% endif %}
-          {% if profile.more_info %}
-            <div class="more-info">{{ profile.more_info }}</div>
-          {% endif %}
-        </div>
+        {% assign profiles_ = profile.items | sort: 'joined' %}
+        {% for p in profiles_ %}
+          <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center mb-4">
+            <div class="col col-md-5 row align-items-center">
+              {% if p.image %}
+                {% assign profile_image_path = p.image | prepend: 'assets/img/' %}
+                {% if p.image_circular %}
+                  {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+                {% else %}
+                  {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+                {% endif %}
+                <div class="mr-4">
+                  <img
+                    class="profile-image"
+                    src="{{ profile_image_path | relative_url }}"
+                    alt="{{ p.name }}"
+                  >
+                </div>
+              {% endif %}
+              <div>
+                <a href="{{ p.website }}" target="_blank" class="profile-link">{{ p.name }}</a>
+              </div>
+            </div>
+            <div class="col col-md-7">
+              <p>{{ p.description | markdownify }}</p>
+            </div>
+          </div>
+        {%- endfor %}
+      {%- endfor %}
 
-        <div class="clearfix">
-          {% if profile.content %}
-            {% capture profile_content %}{% include_relative {{ profile.content }} %}{% endcapture %}
-            {{ profile_content | markdownify }}
-          {% else %}
-            {{ content }}
-          {% endif %}
-        </div>
-      {% endfor %}
     {% endif %}
   </article>
 </div>
