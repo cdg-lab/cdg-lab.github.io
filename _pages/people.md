@@ -43,13 +43,6 @@ profiles:
     website: https://amy.zhucchini.ca/
     description: >
       Amy Zhu is a PhD student in the [Department of Computer Science](https://www.cs.washington.edu/) at the University of Washington. She is interested in computer graphics, machine learning, and digital fabrication.
-  - name: James Noeckel
-    image: profile/james.jpg
-    joined: 2018
-    position: PhD Student
-    website: https://sites.uw.edu/jamesn8/
-    description: >
-      James Noeckel is a PhD student in the [Department of Computer Science](https://www.cs.washington.edu/) at the University of Washington. He is interested in computer graphics, machine learning, and digital fabrication.
   - name: Nat Hurtig
     image: profile/nat.jpg
     joined: 2024
@@ -64,4 +57,25 @@ profiles:
     website: https://zzhang-18.github.io/
     description: >
       Jack Zhang is a PhD student in the [Department of Computer Science](https://www.cs.washington.edu/) at the University of Washington. He is interested in computer graphics, machine learning, and digital fabrication.
+  - name: Dan Cascaval
+    image: profile/blank.jpg
+    joined: 2018
+    position: PhD Student
+    website: https://dan.cascaval.us/
+    description: >
+      Dan Cascaval is a PhD student in the [Department of Computer Science](https://www.cs.washington.edu/) at the University of Washington. He is interested in computer graphics, machine learning, and digital fabrication.
+  - name: James Noeckel
+    image: profile/james.jpg
+    joined: 2018
+    position: Former PhD Student
+    website: https://shnitzelkiller.github.io/
+    description: >
+      James Noeckel is a PhD student in the [Department of Computer Science](https://www.cs.washington.edu/) at the University of Washington. He is interested in computer graphics, machine learning, and digital fabrication.
+  - name: Benjamin Jones
+    image: profile/blank.jpg
+    joined: 2018
+    position: Former PhD Student
+    website: https://bentodjones.com/
+    description: >
+      Benjamin Jones is a PhD student in the [Department of Computer Science](https://www.cs.washington.edu/) at the University of Washington. He is interested in computer graphics, machine learning, and digital fabrication.
 ---
